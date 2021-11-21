@@ -1,7 +1,7 @@
 # myrender
-一个学习的渲染器（来自tinyrender） \\
-本项目最初的原形来自于tinyrender  \\
-https://github.com/ssloy/tinyrenderer/wiki \\
+一个学习的渲染器（来自tinyrender）
+本项目最初的原形来自于tinyrender
+https://github.com/ssloy/tinyrenderer/wiki
 不是太了解相关协议，因此没有写协议，遵循上述链接作者使用的要求。
 项目暂时期望：（按实现顺序
 1、实现线框绘制，支持obj等文件格式，输出tga、png等图片文件格式。
