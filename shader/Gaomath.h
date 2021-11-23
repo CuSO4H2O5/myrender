@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdio>
+#include "Fastmath"
 
 //11.21/2021
 //TODO 做四元数、三元数、二元数及其运算
@@ -48,6 +49,7 @@ template<typename t> struct Vec3{
     inline bool operator ==(const Vec3 &b)      const { return (x==b.x&&y==b.y&&z==b.z); }
     inline Vec3<t>& operator =(const Vec3 &V)   const { x=V.x, y=V.y, z=V.z; return *this;}
     inline Vec3<t> operator *(float f)          const { return Vec3<t>(x*f, y*f, z*f)}
+    float norm () const {return std::sqrt(x*x)}
 };
 
 
