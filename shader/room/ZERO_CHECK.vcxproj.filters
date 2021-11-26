@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\git\myrender\shader\room\CMakeFiles\5fb658e5a4d9261795cc687c74bc7767\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BA03FA6D-8AE1-3BFD-9C33-950D9E129FA3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

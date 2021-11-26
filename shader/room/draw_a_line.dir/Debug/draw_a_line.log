@@ -1,0 +1,31 @@
+﻿  Building Custom Rule F:/git/myrender/shader/CMakeLists.txt
+  main.cpp
+F:\git\myrender\shader\main.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\git\myrender\shader\Gaomath.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\git\myrender\shader\main.cpp(80,61): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+F:\git\myrender\shader\main.cpp(80,47): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+F:\git\myrender\shader\main.cpp(80,33): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+F:\git\myrender\shader\main.cpp(80,19): warning C4244: “参数”: 从“t”转换到“int”，可能丢失数据
+          with
+          [
+              t=float
+          ]
+  model.cpp
+F:\git\myrender\shader\model.cpp(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\git\myrender\shader\Gaomath.h(1,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\git\myrender\shader\model.cpp(43,25): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+F:\git\myrender\shader\model.cpp(47,25): warning C4267: “return”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+  draw_a_line.vcxproj -> F:\git\myrender\shader\room\Debug\draw_a_line.exe

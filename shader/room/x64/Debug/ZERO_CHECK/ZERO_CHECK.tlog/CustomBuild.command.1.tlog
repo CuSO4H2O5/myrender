@@ -1,0 +1,10 @@
+^F:\GIT\MYRENDER\SHADER\ROOM\CMAKEFILES\5FB658E5A4D9261795CC687C74BC7767\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SF:/git/myrender/shader -BF:/git/myrender/shader/room --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file F:/git/myrender/shader/room/draw_a_line.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

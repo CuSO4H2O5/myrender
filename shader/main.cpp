@@ -3,6 +3,8 @@
 #include <cmath>
 #include <algorithm>
 #include "tgaimage.h"
+#include "Gaomath.h"
+#include "model.h"
 
 const TGAColor white = TGAColor(255, 255, 255, 255);
 const TGAColor red   = TGAColor(255, 0,   0,   255);
@@ -46,7 +48,9 @@ void line(int x1, int y1, int x2, int y2, TGAImage &image, TGAColor color){
 		}
 	}else{
 		for(int x=x1;x<=x2;x++){
-			image.set(x, y, color);
+			if(image.set(x, y, color));
+			else std::cerr<<"SET OUT OF RANGE"<<std::endl;
+			std::cout<<image.get(x, y).a<<" "<<image.get(x, y).r<<std::endl;
 			error1+=derror1;
 			if(error1>dx){
 				y+=(y2>y1?1:-1);
@@ -58,12 +62,31 @@ void line(int x1, int y1, int x2, int y2, TGAImage &image, TGAColor color){
 
 
 int main(int argc, char** argv) {
-	TGAImage image(100, 100, TGAImage::RGB);
-	//image.set(52, 41, red);
-	line(12, 20, 11, 80, image, red);
-	line(55, 70, 11, 80, image, white);
-	line(20, 11, 80, 55, image, red);
-	image.flip_vertically(); // i want to have the origin at the left bottom corner of the image
+	int l=1000000, h=1000000;
+	TGAImage image(l, h, TGAImage::RGB);
+	// //image.set(52, 41, red);
+	 line(12, 20, 11, 80, image, red);
+	// line(55, 70, 11, 80, image, white);
+	// line(20, 11, 80, 55, image, red);
+	//const int maxn = 1e8;
+	obj model1 = obj("../model/obj/fandisk1.obj");
+	Vec3f temp;
+	std::vector<int> fa;
+	//bool vis[maxn]{0};
+	for(int i=0;i<model1.nfaces();i++){
+		fa=model1.face(i);
+		//if(vis[*fa.end()]) fa.pop_back();//看有没有绘制过似乎不现实
+		for(int j=0;j<3;j++){
+			Vec3f v0 = model1.vert(j);
+			Vec3f v1 = model1.vert(j+1%3);
+			//std::cout<<v0<<v1<<std::endl;
+			line(int(v0.x*10000+1), int(v0.y*10000+1), int(v1.x*10000+1), int(v1.y*10000+1), image, red);
+			//std::cout<<int(v0.x*10000)<<" "<<int(v0.y*10000)<<" "<<int(v1.x*10000)<<" "<<int(v1.y*10000)<<std::endl;
+		}
+	}
+	image.flip_vertically();
 	image.write_tga_file("output.tga");
+	getchar();
+	getchar();
 	return 0;
 }

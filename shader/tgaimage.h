@@ -57,7 +57,13 @@ struct TGAColor {
 		}
 		return *this;
 	}
+	// friend std::ostream& operator<<(std::ostream& s, TGAColor& ca);
 };
+//TODO 不明白为什么不能通过编译
+// std::ostream& operator<<(std::ostream& s, TGAColor & ca){
+// 	s << "(" << ca.a << "," << ca.r << "," << ca.g << "," << ca.b << ")";
+// 	return s;
+// }
 
 
 class TGAImage {
