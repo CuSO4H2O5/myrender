@@ -1,3 +1,5 @@
+#pragma once
+#include <vector>
 #include "Gaomath.h"
 #define Quaternion Vec4f
 

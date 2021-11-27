@@ -1,12 +1,13 @@
 #include <iostream>
-#include <cstdio>
+#include <string>
+#include <vector>
 #include <sstream>
 #include <fstream>
 #include "model.h"
 //using namespace std;
 
 
-obj::obj(const char *filename){
+obj::obj(const char *filename) : verts_(), faces_() {
     std::ifstream in;
     in.open(filename, std::ifstream::in);
     if(in.fail()){std::cerr<<"CANT OPEN THE FILE"<<std::endl;return ;}
@@ -19,13 +20,13 @@ obj::obj(const char *filename){
         if(!line.compare(0, 2, "v ")){
             iss >> trash;
             Vec3f v;
-            for(int i=0;i<3;i++) iss>>v.raw[i];
+            for(int i=0;i<3;i++) iss >> v.raw[i];
             verts_.push_back(v);
         }else if(!line.compare(0, 2, "f ")){
             std::vector<int> f;
             int itrash, idx;
             iss >> trash;
-            while(iss>>idx>>trash>>trash>>itrash>>trash>>trash>>itrash){
+            while(iss >> idx >> trash >> itrash >> trash >> itrash){
                 idx--;
                 f.push_back(idx);
             }
@@ -39,18 +40,18 @@ obj::obj(const char *filename){
 obj::~obj(){
 }
 
-int obj::nverts(){
-    return verts_.size();
+int obj::nverts() {
+    return (int)verts_.size();
 }
 
-int obj::nfaces(){
-    return faces_.size();
+int obj::nfaces() {
+    return (int)faces_.size();
 }
 
-Vec3f obj::vert(int i){
+Vec3f obj::vert(int i) {
     return verts_[i];
 }
 
-std::vector<int> obj::face(int idx){
+std::vector<int> obj::face(int idx) {
     return faces_[idx];
 }

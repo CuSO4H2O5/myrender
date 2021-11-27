@@ -50,7 +50,7 @@ template<typename t> struct Vec3{
         struct {t ivert, iuv, inorm;};//根据我的猜测，可能是模数之类的？
         t raw[3];
     };
-    Vec3() : x(0), y(0), z(0){}
+    Vec3() : x(0), y(0), z(0) {}
     Vec3(t _x, t _y, t _z) : x(_x), y(_y), z(_z) {}
     inline Vec3<t> operator ^(const Vec3 &V)    const { return Vec3<t>(y*V.z-z*V.y, z*V.x-x*V.z, x*V.y-y*V.x); }
     inline Vec3<t> operator +(const Vec3 &V)    const { return Vec3<t>(x+V.x, y+V.y, z+V.z); }
@@ -58,7 +58,7 @@ template<typename t> struct Vec3{
     inline bool operator ==(const Vec3 &b)      const { return (x==b.x&&y==b.y&&z==b.z); }
     inline Vec3<t> operator *(float f)          const { return Vec3<t>(x*f, y*f, z*f); }
     inline Vec3<t>& operator =(const Vec3 &V)   { x=V.x, y=V.y, z=V.z; return *this; }
-    float norm () const { return std::sqrt(x*x); }
+    float norm () const { return std::sqrt(x*x+y*y+z*z); }
     Vec3<t> & normalize(t l=1) { *this = (*this)*(l/norm()); return *this; }
     template<typename > friend std::ostream& operator<<(std::ostream&, Vec3<t> &);
 };
