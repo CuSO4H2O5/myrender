@@ -21,8 +21,8 @@ const int height=800;
  * 
 ***/
 //11.21
-//TODO 写一个自己的数学库
-//TODO 做obj协议读取
+//写一个自己的数学库（解决
+// 做obj协议读取（解决
 //11.22
 void line(int x1, int y1, int x2, int y2, TGAImage &image, TGAColor color){
 	//std::cout<<int(color.r)<<" "<<int(color.g)<<" "<<int(color.b)<<std::endl;//忠诚度检测
